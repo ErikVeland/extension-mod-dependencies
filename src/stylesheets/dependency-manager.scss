@@ -1,3 +1,64 @@
+@import "details";
+
+.dependency-manager {
+  .install-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: $half-gutter;
+    margin-bottom: $half-gutter;
+
+    .install-button {
+      margin-left: $half-gutter;
+    }
+  }
+
+  .instructions-container {
+    margin-top: $half-gutter;
+    margin-bottom: $half-gutter;
+    padding: $half-gutter;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius-base;
+  }
+
+  .dependency-entry {
+    display: flex;
+    align-items: center;
+    padding: $half-gutter;
+    margin-bottom: $half-gutter;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius-base;
+
+    .dependency-icon {
+      margin-right: $half-gutter;
+    }
+
+    .dependency-info {
+      flex: 1;
+    }
+
+    .dependency-actions {
+      display: flex;
+      gap: $half-gutter;
+    }
+  }
+
+  .missing-dependency {
+    background-color: rgba($brand-danger, 0.1);
+    border-color: $brand-danger;
+  }
+
+  .outdated-dependency {
+    background-color: rgba($brand-warning, 0.1);
+    border-color: $brand-warning;
+  }
+
+  .satisfied-dependency {
+    background-color: rgba($brand-success, 0.1);
+    border-color: $brand-success;
+  }
+}
+
 @import "node-content-renderer.scss";
 
 .btn-embed {
