@@ -1,4 +1,4 @@
-let webpack = require('vortex-api/bin/webpack').default;
+const webpack = require('vortex-api/bin/webpack').default;
 
 const config = webpack('mod-dependency-manager', __dirname, 5);
 

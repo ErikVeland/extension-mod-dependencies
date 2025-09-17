@@ -110,7 +110,7 @@ class SearchBox extends ComponentEx<ISearchBoxProps, ISearchBoxState> {
     }
     const newFocusIndex = matches.length > 0 ? searchFocusIndex % matches.length : 0;
     if (searchFocusIndex !== newFocusIndex) {
-    onSetSearchFocus(newFocusIndex);
+      onSetSearchFocus(newFocusIndex);
     }
   }
 }

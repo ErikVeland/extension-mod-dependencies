@@ -43,8 +43,8 @@ class RuleDescription extends React.Component<IDescriptionProps, {}> {
       'rule-description',
       this.className(),
     ]
-    .filter(iter => iter !== undefined)
-    .join(' ');
+      .filter(iter => iter !== undefined)
+      .join(' ');
     const key = this.key(rule);
     return (
       <div

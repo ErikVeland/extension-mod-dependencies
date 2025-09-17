@@ -32,23 +32,23 @@ function unsolvedConflictsCheck(api: types.IExtensionApi,
             + 'In some cases this can lead to incompatible files being used which can cause all '
             + 'kind of problems inside the game.\n'
             + 'Please address all file conflicts before running the game.', {
-              replace: {
+        replace: {
                 // tslint:disable-next-line:max-line-length
-                more: `[More id='more-conflict' wikiId='file-conflicts' name='${t('Conflicts')}']${util.getText('mod', 'conflicts', t)}[/More]`,
-              },
-            }),
+          more: `[More id='more-conflict' wikiId='file-conflicts' name='${t('Conflicts')}']${util.getText('mod', 'conflicts', t)}[/More]`,
+        },
+      }),
     },
-      [
-        { label: 'Cancel' },
-        { label: 'Show' },
-      ],
+                          [
+                            { label: 'Cancel' },
+                            { label: 'Show' },
+                          ],
     )
-    .then((result: types.IDialogResult) => {
-      if (result.action === 'Show') {
-        showUnsolvedConflictsDialog(api, modRules, undefined, gameMode);
-      }
-      return Promise.reject(new util.ProcessCanceled('Unresolved File conflicts'));
-    });
+      .then((result: types.IDialogResult) => {
+        if (result.action === 'Show') {
+          showUnsolvedConflictsDialog(api, modRules, undefined, gameMode);
+        }
+        return Promise.reject(new util.ProcessCanceled('Unresolved File conflicts'));
+      });
   } else {
     return Promise.resolve(input);
   }

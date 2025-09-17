@@ -83,7 +83,7 @@ class ConflictGraph extends ComponentEx<IProps, IComponentState> {
       show: true,
       action: () => this.loadLast(),
     },
-   ];
+  ];
 
   private contextEdgeActions = [
     {
@@ -297,7 +297,7 @@ class ConflictGraph extends ComponentEx<IProps, IComponentState> {
 
     // all rules where the selected node is loaded before something else
     const beforeRules = localState.modRules.filter(rule =>
-        rule.original
+      rule.original
         && (((rule.type === 'before') && util.testModReference(mods[id], rule.source))
             || (rule.type === 'after') && util.testModReference(mods[id], rule.reference)));
 
@@ -326,16 +326,16 @@ class ConflictGraph extends ComponentEx<IProps, IComponentState> {
 
     const modIds: Set<string> = new Set();
     connReferences.forEach(connRef => {
-        const destId = editCycle.modIds
-          .find(modId => util.testModReference(mods[modId], connRef));
+      const destId = editCycle.modIds
+        .find(modId => util.testModReference(mods[modId], connRef));
 
-        if (!modIds.has(destId)) {
-          modIds.add(destId);
-          onAddRule(editCycle.gameId, id, {
-            type: 'after',
-            reference: connRef,
-          });
-        }
+      if (!modIds.has(destId)) {
+        modIds.add(destId);
+        onAddRule(editCycle.gameId, id, {
+          type: 'after',
+          reference: connRef,
+        });
+      }
     });
   }
 
@@ -344,7 +344,7 @@ class ConflictGraph extends ComponentEx<IProps, IComponentState> {
     const { selection } = this.state.context;
 
     const bidirRule = localState.modRules.find(iter =>
-          (iter.type === 'before')
+      (iter.type === 'before')
           && util.testModReference(mods[selection.source], iter.source)
           && util.testModReference(mods[selection.target], iter.reference));
     if (bidirRule === undefined) {
@@ -371,7 +371,7 @@ class ConflictGraph extends ComponentEx<IProps, IComponentState> {
     const { selection } = this.state.context;
 
     const bidirRule = localState.modRules.find(rule =>
-          rule.type === 'before'
+      rule.type === 'before'
           && util.testModReference(mods[selection.source], rule.source)
           && util.testModReference(mods[selection.target], rule.reference));
     if (bidirRule === undefined) {
